@@ -1,0 +1,102 @@
+# Pages CMS edits the existing Shirone Markdown files; the public theme is unchanged.
+media:
+  - name: uploads
+    label: 图片库
+    input: public/uploads
+    output: /uploads
+    extensions: [jpg, jpeg, png, webp, gif, avif]
+    rename: random
+
+settings:
+  content:
+    # Keep existing Shirone fields (precise timestamps, series, aliases, etc.).
+    merge: true
+  commit:
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} to {newPath}"
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    subfolders: true
+    exclude: ["**/*.mdx", "*.mdx"]
+    filename:
+      template: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+      field: create
+    view:
+      fields: [title, published, draft, category]
+      primary: title
+      sort: [published, title]
+      search: [title, description, category]
+      default:
+        sort: published
+        order: desc
+    fields:
+      - name: title
+        label: 文章标题
+        type: string
+        required: true
+      - name: published
+        label: 发布日期
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+          time: false
+        description: 已有文章若包含精确发布时间，更改日期时也要同步调整原文件中的 publishedAt。
+      - name: draft
+        label: 仅保存为草稿
+        type: boolean
+        default: false
+        description: 开启后不显示在博客上；关闭后保存即可发布。公开仓库中的草稿文件仍可被查看。
+      - name: description
+        label: 文章摘要
+        type: text
+      - name: image
+        label: 封面图片
+        type: image
+        options:
+          media: uploads
+      - name: category
+        label: 分类
+        type: string
+      - name: tags
+        label: 标签
+        type: string
+        list: true
+      - name: pinned
+        label: 首页置顶
+        type: boolean
+        default: false
+      - name: body
+        label: 正文
+        type: rich-text
+        options:
+          format: markdown
+          media: uploads
+          switcher: true
+        description: 可直接写作、插入图片。编辑含 Shirone 自定义语法的旧文时请使用 Source 源码模式。
+
+  - name: about
+    label: 关于我
+    type: file
+    path: src/content/spec/about.md
+    format: yaml-frontmatter
+    operations:
+      delete: false
+      rename: false
+    fields:
+      - name: body
+        label: 关于我的内容
+        type: rich-text
+        options:
+          format: markdown
+          media: uploads
+          switcher: true
+        description: 保留自定义 Markdown 语法时请使用 Source 源码模式。
