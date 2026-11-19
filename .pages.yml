@@ -1,4 +1,6 @@
-# Pages CMS edits the existing Shirone Markdown files; the public theme is unchanged.
+# 受不了的博客 — Pages CMS
+# New entries start as drafts; turn draft off and save to publish.
+# Content and images stay in this GitHub repository.
 media:
   - name: uploads
     label: 图片库
