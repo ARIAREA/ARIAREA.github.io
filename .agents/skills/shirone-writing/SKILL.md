@@ -73,7 +73,7 @@ hideHomeContent: true   # 加密内容在首页隐藏(默认 true)
 
 ## 现成范例(demo 文章即文档)
 
-`src/content/posts/` 下的示例文章同时是语法文档,写作前可参考:`markdown.md`(基础)、`markdown-extended.md`(扩展语法)、`admonitions.md`、`spoilers.md`、`steps.md`、`option-groups.md`、`collapse-panels.md`、`marker-highlights.md`、`markdown-abbreviations.md`、`markdown-mermaid.md`、`expressive-code.md`、`encrypted-demo.md`(加密)、`video.md`、`image-grid-demo/`(图片画廊)、`markdown-includes.md`(文件包含)。
+`docs/theme-examples/posts/` 下的示例文章同时是语法文档,写作前可参考:`markdown.md`(基础)、`markdown-extended.md`(扩展语法)、`admonitions.md`、`spoilers.md`、`steps.md`、`option-groups.md`、`collapse-panels.md`、`marker-highlights.md`、`markdown-abbreviations.md`、`markdown-mermaid.md`、`expressive-code.md`、`encrypted-demo.md`(加密)、`video.md`、`image-grid-demo/`(图片画廊)、`markdown-includes.md`(文件包含)。
 
 ## 注意事项
 
