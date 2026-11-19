@@ -34,7 +34,8 @@ export type BannerConfig = {
 		desktop: BannerSourceValue;
 		mobile: BannerSourceValue;
 	};
-	position?: "top" | "center" | "bottom";
+	/** 横幅裁切对齐；right 可保留画面右侧的人物。 */
+	position?: "top" | "center" | "bottom" | "left" | "right";
 	dim: {
 		enable: boolean;
 		opacity: number;

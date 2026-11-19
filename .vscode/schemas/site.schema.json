@@ -463,6 +463,12 @@
             {
               "type": "string",
               "enum": [
+                "left"
+              ]
+            },
+            {
+              "type": "string",
+              "enum": [
                 "center"
               ]
             },
@@ -477,8 +483,15 @@
               "enum": [
                 "bottom"
               ]
+            },
+            {
+              "type": "string",
+              "enum": [
+                "right"
+              ]
             }
-          ]
+          ],
+          "description": "横幅裁切对齐；right 可保留画面右侧的人物。"
         },
         "dim": {
           "type": "object",
