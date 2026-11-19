@@ -60,6 +60,7 @@ content:
         type: text
       - name: image
         label: 封面图片
+        description: 建议上传压缩后的 WebP 或 JPG；单张尽量小于 3 MB。遇到 413 提示时请先压缩图片。
         type: image
         options:
           media: uploads
