@@ -11,7 +11,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
  */
 export const siteConfig: SiteConfig = withUserConfig("site", {
 	// GitHub Actions supplies the actual site URL before building.
-	site: "https://example.com/",
+	site: "https://ariarea.github.io/",
 	base: "/",
 	title: "Shirone",
 	subtitle: "A Material 3 anime blog",
